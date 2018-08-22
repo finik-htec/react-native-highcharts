@@ -55,9 +55,13 @@ class ChartWeb extends Component {
             Wlayout:{
                 height:win.height,
                 width:win.width
-            }
+            },
+            opacity: 0
         }
+        this.updateOpacity();
     }
+
+    updateOpacity = () => setTimeout(() => this.setState({ opacity: 1}))
 
     // used to resize on orientation of display
     reRenderWebView(e) {
@@ -75,12 +79,12 @@ class ChartWeb extends Component {
 
         config = JSON.parse(config)
         let concatHTML = `${this.state.init}${flattenObject(config)}${this.state.end}`;
-        
+
         return (
           <View style={this.props.style}>
               <WebView
                   onLayout={this.reRenderWebView}
-                  style={styles.full}
+                  style={[styles.full, { opacity: this.state.opacity}]}
                   source={{ html: concatHTML, baseUrl: 'web/' }}
                   javaScriptEnabled={true}
                   domStorageEnabled={true}
