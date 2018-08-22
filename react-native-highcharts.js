@@ -84,7 +84,6 @@ class ChartWeb extends Component {
           <View style={this.props.style}>
               <WebView
                   onLayout={this.reRenderWebView}
-                  style={[styles.full, { opacity: this.state.opacity}]}
                   source={{ html: concatHTML, baseUrl: 'web/' }}
                   javaScriptEnabled={true}
                   domStorageEnabled={true}
@@ -92,6 +91,7 @@ class ChartWeb extends Component {
                   scrollEnabled={false}
                   automaticallyAdjustContentInsets={true}
                   {...this.props}
+                  style={[styles.full, { opacity: this.state.opacity}]}
               />
           </View>
         );
