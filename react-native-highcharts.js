@@ -61,7 +61,7 @@ class ChartWeb extends Component {
         this.updateOpacity();
     }
 
-    updateOpacity = () => setTimeout(() => this.setState({ opacity: 1}))
+    updateOpacity = () => setTimeout(() => this.setState({ opacity: 1}), 500)
 
     // used to resize on orientation of display
     reRenderWebView(e) {
