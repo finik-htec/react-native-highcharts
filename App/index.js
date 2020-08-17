@@ -4,11 +4,11 @@ import {
     StyleSheet,
     Text,
     View,
-    WebView,
     Image,
     Dimensions
 } from 'react-native';
-
+import { WebView } from 'react-native-webview';
+ 
 const win = Dimensions.get('window');
 class ChartWeb extends Component {
     constructor(props){
